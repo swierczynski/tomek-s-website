@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #aaa;
+}
+
+
+.fixed {
+    position: fixed;
+    width: 100%;
+    height: 13vh;
+    left: 0%;
+    top: 0px;
+    background-color: #212925;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.menu img {
+    display: block;
+    height: 8vh;
+}
+
+.menu .logo {
+    padding: 0 2%;
+}
+
+.burger {
+    display: none;
+    padding: 10px;
+}
+
+.burger div {
+    width: 33px;
+    height: 4px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+    transition: all 0.3s ease 0.2s;
+}
+
+.first-nav ul,
+.second-nav {
+    list-style: none;
+    display: flex;
+}
+
+.second-nav {
+    padding: 0 2%;
+}
+
+
+.first-nav {
+    width: 40%;
+    max-width: 500px;
+}
+
+.first-nav ul {
+    justify-content: space-between;
+}
+
+.first-nav ul a,
+.second-nav a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.second-nav a {
+    position: relative;
+}
+
+.second-nav a i {
+    position: absolute;
+    left: -30%;
+}
+
+
+
+
+@media (min-width:1024px) {
+    .fixed {
+        width: 90%;
+        left: 5%;
+        top: 10px;
+        border-radius: 10px;
+        background-color: transparent;
+        transition: .3s;
+    }
+
+    /* do zmiany wraper przyciemnia sie przez najechanie  na menu */
+
+    .fixed:hover~.wraper {
+        background-color: rgba(0, 0, 0, .4);
+
+    }
+
+    .fixed:hover {
+        background-color: white;
+    }
+
+    .fixed:hover a {
+        color: #aaa;
+    }
+
+    .first-nav ul a,
+    .second-nav a {
+        font-size: 18px;
+    }
+
+    .menu a:hover {
+        color: #212925;
+    }
+}
+
+
+
+
+@media (max-width:900px) {
+    body {
+        overflow-x: hidden;
+    }
+
+
+    .first-nav {
+        width: 0px;
+    }
+
+
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 13vh;
+        height: 60vh;
+        z-index: 2;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        background-color: #212925;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+        margin: 0 5%
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .nav-links li:nth-last-child(1) a {
+        margin-bottom: 80px;
+    }
+
+    .second-nav a {
+        display: none;
+    }
+
+
+}
+
+@keyframes navLinkFade {
+    form {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(45deg) translateY(12px) scaleX(1.424);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(-45deg) translateY(-13px) scaleX(1.424);
+}
+
+.wraper {
+    background-color: rgba(0, 0, 0, .5);
+    transition: .5s;
+}
+
+.photo-change {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+
+.photo-change img {
+    height: 100vh;
+    width: 100vw;
+}
