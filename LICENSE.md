@@ -1,0 +1,1 @@
+Using logo of Revency and other sings which belong to company are forbidden
